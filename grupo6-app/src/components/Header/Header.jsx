@@ -1,6 +1,6 @@
 const Header = () => {
     return (
-        <h1>Atención de Citas</h1>
+        <h1 className="cabecera">Atención de Citas</h1>
     )
 }
 
