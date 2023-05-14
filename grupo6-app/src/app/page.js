@@ -6,8 +6,8 @@ import Aside from '../components/Aside/Aside.jsx'
 export default function Home() {
   return (
     <main>
-      <Header />
-      <Aside />
+      <Header></Header>
+      <Aside></Aside>
     </main>
   )
 }

@@ -1,12 +1,13 @@
 .ladoizquierdo{
-    width: 150px;
-    height: 714px;
+    width: 160px;
     background-color: #D3D3D3;
 }
 
 .menuaside{
     margin-top: 0px;
+    margin-bottom: 0px;
     padding-top: 50px;
+    padding-left: 50px;
     text-align: justify;
 }
 .menuaside li{
@@ -20,5 +21,5 @@ p{
     font-weight: bold;
     text-align: center;
     font-size: 12px;
-    margin-top: 500px;
+    padding-top: 460px;
 }
