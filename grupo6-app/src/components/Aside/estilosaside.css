@@ -1,0 +1,24 @@
+.ladoizquierdo{
+    width: 150px;
+    height: 714px;
+    background-color: #D3D3D3;
+}
+
+.menuaside{
+    margin-top: 0px;
+    padding-top: 50px;
+    text-align: justify;
+}
+.menuaside li{
+    list-style-type: none; 
+    margin-bottom: 35px; 
+    color: #8000b2;
+    font-weight: bold;
+}
+
+p{
+    font-weight: bold;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 500px;
+}

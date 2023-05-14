@@ -1,0 +1,27 @@
+.cabecera {
+    background-color: #fff2ff;
+    margin: auto;
+    display: flex;
+}
+
+h1{
+    text-align: center;
+    display: flex;
+    font-weight: normal;
+    font-size: 20px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+figure{
+    display: flex;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.imagen{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
