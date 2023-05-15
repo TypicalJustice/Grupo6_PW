@@ -1,13 +1,14 @@
-.perfil{
+.perfil {
     margin: auto;
 }
 
-header{
+header {
     display: flex;
 }
 
-main{
-   display: flex;
+main {
+    display: flex;
+    flex-direction: row;
 }
 
 .cabecera {
@@ -16,7 +17,7 @@ main{
     width: 100%;
 }
 
-.cabecera h1{
+.cabecera h1 {
     text-align: center;
     font-weight: normal;
     font-size: 20px;
@@ -25,45 +26,46 @@ main{
     padding-bottom: 20px;
 }
 
-figure{
+figure {
     margin-right: 20px;
     margin-left: 20px;
 }
 
-.ladoizquierdo{
+.ladoizquierdo {
     width: 160px;
     background-color: #D3D3D3;
     margin-right: 20px;
 }
 
-.menuaside{
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding-top: 50px;
-    padding-left: 50px;
-}
-.menuaside li{
-    list-style-type: none;
-    margin-bottom: 35px; 
-    color: #8000b2;
-    font-weight: bold;
-}
-
-.ladoizquierdo p{
+.ladoizquierdo p {
     font-weight: bold;
     font-size: 12px;
     text-align: center;
     padding-top: 450px;
 }
 
-.titulo{
-    width: 1340px;
+.menuaside {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 50px;
+    padding-left: 50px;
+}
+
+.menuaside li {
+    list-style-type: none;
+    margin-bottom: 35px;
+    color: #8000b2;
+    font-weight: bold;
+}
+
+.titulo {
+    width: 1335px;
     height: 90px;
     display: flex;
     border-bottom: 2px solid #A9A9A9;
 }
 
-.titulo h2{
+.titulo h2 {
     margin: 0px 0px 0px 0px;
     padding-top: 45px;
     width: 100px;
@@ -71,13 +73,13 @@ figure{
     font-size: 25px;
 }
 
-.titulo button{
-    margin-left: 1145px;
+.titulo button {
+    margin-left: 1135px;
     margin-top: 35px;
     padding-left: 10px;
     padding-right: 10px;
     height: 40px;
-    width: 85px;
+    width: 100px;
     background-color: purple;
     color: white;
     border-radius: 15px;

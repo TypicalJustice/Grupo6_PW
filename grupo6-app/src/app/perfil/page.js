@@ -24,9 +24,9 @@ const Perfil = () => {
                     </ol>
                     <p>SAC v1.0.1-alpha</p>
                 </div>
-                <div class="titulo">
-                   <h2>Mi Perfil</h2>
-                   <button>Guardar</button>
+                <div className="titulo">
+                    <h2>Mi Perfil</h2>
+                    <button>Guardar</button>
                 </div>
             </main>
         </div>
