@@ -60,16 +60,19 @@ const Perfil = () => {
                             </Form.Group>
                             <Form.Group className="mb-3arribafoto">
                                 {selectedImage && (
-                                    <img src={selectedImage} alt="Selected" className="selected-image" style={{width: '270px', height: '200px' }} />
+                                    <img src={selectedImage} alt="Selected" className="selected-image" style={{ width: '265px', height: '220px' }} />
                                 )}
                                 <Form.Control type="file" onChange={handleImageChange} />
-                                <p style={{width: '270px',color:'#8000b2', textAlign:'center', marginTop:'5px', marginBottom:'0px', fontSize:'15px'}}>Adjuntar Foto</p>
+                                <p style={{ width: '265px', color: '#8000b2', textAlign: 'center', marginTop: '5px', marginBottom: '0px', fontSize: '14px' }}>Adjuntar Foto</p>
                             </Form.Group>
                         </Form>
                         <Form>
                             <Form.Group className="mb-3arriba">
                                 <Form.Label>Rol</Form.Label>
-                                <Form.Control required type="text" placeholder='Ingrese su rol' className='arriba' />
+                                <Form.Select aria-label="Default select example" className='arriba'>
+                                    <option value="1">Docente</option>
+                                    <option value="2">Alumno</option>
+                                </Form.Select>
                             </Form.Group>
                             <Form.Group className="mb-34">
                                 <Form.Label>Número</Form.Label>
