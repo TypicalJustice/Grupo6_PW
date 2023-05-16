@@ -2,8 +2,17 @@
 import styles from './perfil.css';
 import Image from 'next/image';
 import Form from 'react-bootstrap/Form';
+import React, { useState } from 'react';
 
 const Perfil = () => {
+
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const handleImageChange = (event) => {
+        const file = event.target.files[0];
+        setSelectedImage(URL.createObjectURL(file));
+    };
+
     return (
         <div className="perfil">
             <header>
@@ -36,28 +45,35 @@ const Perfil = () => {
                         <Form>
                             <Form.Group className="mb-3arriba">
                                 <Form.Label>Nombres</Form.Label>
-                                <Form.Control required type="text" placeholder='Nombres' className='arriba'/>
+                                <Form.Control required type="text" placeholder='Nombres' className='arriba' />
                             </Form.Group>
                             <Form.Group className="mb-3arriba">
                                 <Form.Label>Apellidos</Form.Label>
-                                <Form.Control required type="text" placeholder='Apellidos' className='arriba'/>
+                                <Form.Control required type="text" placeholder='Apellidos' className='arriba' />
                             </Form.Group>
                             <Form.Group className="mb-3arriba">
                                 <Form.Label>Tipo de documento</Form.Label>
                                 <Form.Select aria-label="Default select example" className='arriba'>
                                     <option value="1">DNI</option>
-                                    <option value="2">Carné de extranjeria</option>
+                                    <option value="2">Pasaporte</option>
                                 </Form.Select>
+                            </Form.Group>
+                            <Form.Group className="mb-3arribafoto">
+                                {selectedImage && (
+                                    <img src={selectedImage} alt="Selected" className="selected-image" style={{width: '270px', height: '200px' }} />
+                                )}
+                                <Form.Control type="file" onChange={handleImageChange} />
+                                <p style={{width: '270px',color:'#8000b2', textAlign:'center', marginTop:'5px', marginBottom:'0px', fontSize:'15px'}}>Adjuntar Foto</p>
                             </Form.Group>
                         </Form>
                         <Form>
                             <Form.Group className="mb-3arriba">
                                 <Form.Label>Rol</Form.Label>
-                                <Form.Control required type="text" placeholder='Ingrese su rol' className='arriba'/>
+                                <Form.Control required type="text" placeholder='Ingrese su rol' className='arriba' />
                             </Form.Group>
                             <Form.Group className="mb-34">
-                                <Form.Label>Número de documento</Form.Label>
-                                <Form.Control required type="text" placeholder='Ingrese número' className='arriba'/>
+                                <Form.Label>Número</Form.Label>
+                                <Form.Control required type="text" placeholder='Ingrese número de documento' className='arriba' />
                             </Form.Group>
                         </Form>
                     </div>
@@ -70,21 +86,21 @@ const Perfil = () => {
                         <Form>
                             <Form.Group className="mb-3abajo">
                                 <Form.Label>Usuario</Form.Label>
-                                <Form.Control required type="text" placeholder='Nombre del usuario' className='abajo'/>
+                                <Form.Control required type="text" placeholder='Nombre del usuario' className='abajo' />
                             </Form.Group>
                         </Form>
                         <Form>
                             <Form.Group className="mb-3abajo">
                                 <Form.Label>Contraseña Actual</Form.Label>
-                                <Form.Control required type="password" placeholder='Ingrese su contraseña' className='abajo'/>  
+                                <Form.Control required type="password" placeholder='Ingrese su contraseña' className='abajo' />
                             </Form.Group>
                             <Form.Group className="mb-3abajo">
                                 <Form.Label>Nueva Contraseña</Form.Label>
-                                <Form.Control required type="password" placeholder='Ingrese nueva contraseña' className='abajo'/>  
+                                <Form.Control required type="password" placeholder='Ingrese nueva contraseña' className='abajo' />
                             </Form.Group>
                             <Form.Group className="mb-3abajo">
                                 <Form.Label>Repetir Contraseña</Form.Label>
-                                <Form.Control required type="password" placeholder='Repita nueva contraseña' className='abajo'/>
+                                <Form.Control required type="password" placeholder='Repita nueva contraseña' className='abajo' />
                             </Form.Group>
                         </Form>
                     </div>

@@ -100,8 +100,9 @@ figure {
 }
 
 .formularioarriba{
-    width: 825px;
-    margin-bottom: 40px;
+    width: 1335px;
+    height: 200px;
+    margin-bottom: 20px;
 }
 
 .formularioabajo{
@@ -113,10 +114,18 @@ figure {
 form{
     display: flex;
     width: 820px;
+    height: 90px;
 }
 
 .mb-3arriba{
     margin-right: 25px;
+}
+
+.mb-3arribafoto{
+    margin-left: 200px;
+    margin-bottom: 50px;
+    height: 60px;
+    width: 270px;
 }
 
 .mb-3abajo{
