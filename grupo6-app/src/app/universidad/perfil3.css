@@ -80,16 +80,28 @@ figure {
     font-size: 25px;
 }
 
-.titulo button {
+.Cancelar {
     height: 40px;
     width: 100px;
     margin-top: 40px;
-    margin-left: 1135px;
+    margin-left: 1020px;
+    background-color: white;
+    color:  #6614b8;
+    font-weight: bold;
+    border-radius: 30px;
+}
+
+.Guardar {
+    height: 40px;
+    width: 100px;
+    margin-top: 40px;
+    margin-left: 15px;
     background-color: #6614b8;
     color: white;
     font-weight: bold;
     border-radius: 30px;
 }
+
 
 .perfilcentro h4{
     margin-top: 30px;
@@ -132,7 +144,7 @@ form{
 }
 
 .mb-3abajo{
-    margin-right: 25px;
+    margin-right: 80px;
     margin-left: 10px;
 }
 
@@ -157,10 +169,19 @@ form{
 
 .abajo{
     height: 50px;
-    width: 150px;
+    width: 430px;
     border-width: 2.5px;
-    border-radius: 5px;
     border-color: #8000b2;
+    border-radius: 5px;
+}
+
+
+.abajoderecha{
+    height: 50px;
+    width: 760px;
+    border-width: 2.5px;
+    border-color: #8000b2;
+    border-radius: 5px;
 }
 
 .form-select{
