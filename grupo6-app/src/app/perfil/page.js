@@ -1,8 +1,9 @@
 'use client';
-import styles from './perfil.css';
+import styles from './perfil.css';  
 import Image from 'next/image';
 import Form from 'react-bootstrap/Form';
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const Perfil = () => {
 
@@ -12,6 +13,12 @@ const Perfil = () => {
         const file = event.target.files[0];
         setSelectedImage(URL.createObjectURL(file));
     };
+
+    const router = useRouter();
+
+    const handlePrincipalClick = () => {
+        router.push('/principal')
+    }
 
     return (
         <div className="perfil">
@@ -29,9 +36,9 @@ const Perfil = () => {
             <main>
                 <div className='ladoizquierdo'>
                     <ol className="menuaside">
-                        <li>Principal</li>
-                        <li>Perfil</li>
-                        <li>Horarios</li>
+                        <li onClick={handlePrincipalClick} className='cursor'>Principal</li>
+                        <li className='cursor'>Perfil</li>
+                        <li className='cursor'>Horarios</li>
                     </ol>
                     <p>SAC v1.0.1-alpha</p>
                 </div>

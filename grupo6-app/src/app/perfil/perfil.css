@@ -184,3 +184,7 @@ form{
     font-size: 14px;
 }
 
+.cursor{
+    cursor: pointer;
+}
+
