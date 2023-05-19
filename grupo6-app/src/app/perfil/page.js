@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Form from 'react-bootstrap/Form';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { Link, Switch, Route } from 'react-router-dom';
 
 const Perfil = () => {
 
@@ -15,10 +16,21 @@ const Perfil = () => {
     };
 
     const router = useRouter();
-
     const handlePrincipalClick = () => {
         router.push('/principal')
     }
+
+    const router1 = useRouter();
+    const handleUniversidadClick = () => {
+        router1.push('/universidadpage')
+    }
+
+    const router2 = useRouter();
+    const handlePresentacionClick = () => {
+        router2.push('/presentacion')
+    }
+
+    
 
     return (
         <div className="perfil">
@@ -89,8 +101,8 @@ const Perfil = () => {
                     </div>
                     <div className='encabezadoinferior'>
                         <p>Datos de Usuario</p>
-                        <p>Universidad</p>
-                        <p>Presentación</p>
+                        <p onClick={handleUniversidadClick} className='cursor'>Universidad</p>
+                        <p onClick={handlePresentacionClick} className='cursor'>Presentación</p>
                     </div>
                     <div className='formularioabajo'>
                         <Form>

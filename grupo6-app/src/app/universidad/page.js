@@ -3,6 +3,7 @@ import styles from './perfil3.css';
 import Image from 'next/image';
 import Form from 'react-bootstrap/Form';
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 
 const Universidad = () => {
@@ -13,6 +14,12 @@ const Universidad = () => {
         const file = event.target.files[0];
         setSelectedImage(URL.createObjectURL(file));
     };
+
+    const router = useRouter();
+    const handlePresentacionClick = () => {
+        router.push('/presentacion')
+    }
+
     return (
         <div className="perfil">
             <header>
@@ -84,7 +91,7 @@ const Universidad = () => {
                     <div className='encabezadoinferior'>
                         <p>Datos de Usuario</p>
                         <p>Universidad</p>
-                        <p>Presentación</p>
+                        <p className='cursor' onClick={handlePresentacionClick}>Presentación</p>
                     </div>
                     <div className='formularioabajo'>
                         <Form>

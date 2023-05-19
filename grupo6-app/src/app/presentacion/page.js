@@ -3,6 +3,7 @@ import styles from './perfil2.css';
 import Image from 'next/image';
 import Form from 'react-bootstrap/Form';
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const Presentación = () => {
 
@@ -12,6 +13,13 @@ const Presentación = () => {
         const file = event.target.files[0];
         setSelectedImage(URL.createObjectURL(file));
     };
+
+    const router = useRouter();
+    
+    const handlePrincipalClick = () => {
+        router.push('/principal')
+    }
+
     return (
         <div className="perfil">
             <header>
@@ -28,7 +36,7 @@ const Presentación = () => {
             <main>
                 <div className='ladoizquierdo'>
                     <ol className="menuaside">
-                        <li>Principal</li>
+                        <li className='cursor' onClick={handlePrincipalClick}>Principal</li>
                         <li>Perfil</li>
                         <li>Horarios</li>
                     </ol>
