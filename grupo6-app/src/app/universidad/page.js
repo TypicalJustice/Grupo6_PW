@@ -15,9 +15,19 @@ const Universidad = () => {
         setSelectedImage(URL.createObjectURL(file));
     };
 
+    const router0 = useRouter();
+    const handlePrincipalClick = () => {
+        router0.push('/principal')
+    }
+
     const router = useRouter();
     const handlePresentacionClick = () => {
         router.push('/presentacion')
+    }
+
+    const router1 = useRouter();
+    const handlePerfilClick = () => {
+        router1.push('/perfil')
     }
 
     return (
@@ -36,7 +46,7 @@ const Universidad = () => {
             <main>
                 <div className='ladoizquierdo'>
                     <ol className="menuaside">
-                        <li>Principal</li>
+                        <li onClick={handlePrincipalClick}>Principal</li>
                         <li>Perfil</li>
                         <li>Horarios</li>
                     </ol>
@@ -89,8 +99,8 @@ const Universidad = () => {
                         </Form>
                     </div>
                     <div className='encabezadoinferior'>
-                        <p>Datos de Usuario</p>
-                        <p>Universidad</p>
+                        <p className='cursor' onClick={handlePerfilClick}>Datos de Usuario</p>
+                        <p className='cursor'>Universidad</p>
                         <p className='cursor' onClick={handlePresentacionClick}>Presentación</p>
                     </div>
                     <div className='formularioabajo'>

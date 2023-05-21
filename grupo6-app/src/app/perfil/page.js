@@ -22,12 +22,12 @@ const Perfil = () => {
 
     const router1 = useRouter();
     const handleUniversidadClick = () => {
-        router1.push('/universidadpage')
+        router.push('/universidad')
     }
 
     const router2 = useRouter();
     const handlePresentacionClick = () => {
-        router2.push('/presentacion')
+        router.push('/presentacion')
     }
 
     
@@ -100,7 +100,7 @@ const Perfil = () => {
                         </Form>
                     </div>
                     <div className='encabezadoinferior'>
-                        <p>Datos de Usuario</p>
+                        <p className='cursor'>Datos de Usuario</p>
                         <p onClick={handleUniversidadClick} className='cursor'>Universidad</p>
                         <p onClick={handlePresentacionClick} className='cursor'>Presentación</p>
                     </div>
