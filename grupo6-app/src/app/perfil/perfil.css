@@ -80,11 +80,22 @@ figure {
     font-size: 25px;
 }
 
-.titulo button {
+.Cancelar {
     height: 40px;
     width: 100px;
     margin-top: 40px;
-    margin-left: 1135px;
+    margin-left: 1020px;
+    background-color: white;
+    color:  #6614b8;
+    font-weight: bold;
+    border-radius: 30px;
+}
+
+.Guardar {
+    height: 40px;
+    width: 100px;
+    margin-top: 40px;
+    margin-left: 15px;
     background-color: #6614b8;
     color: white;
     font-weight: bold;
@@ -105,11 +116,11 @@ figure {
 
 .formularioarriba{
     width: 1335px;
-    height: 220px;
-    margin-bottom: 20px;
+    height: 185px;
+    margin-bottom: 5px;
 }
 
-.formularioabajo{
+.formulariousuario{ 
     width: 1335px;
     height: 260px;
     background-color: #fff2ff;
@@ -169,21 +180,4 @@ form{
     border-width: 2px;
     border-color: black;
     border-radius: 5px;
-}
-
-.encabezadoinferior{
-    display: flex;
-    background-color: #fff2ff;
-    width: 400px;
-    height: 45px;
-}
-
-.encabezadoinferior p{
-    margin-right: 30px;
-    margin-left: 10px;
-    font-size: 14px;
-}
-
-.cursor{
-    cursor: pointer;
 }

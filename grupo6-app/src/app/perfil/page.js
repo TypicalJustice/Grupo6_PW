@@ -1,10 +1,11 @@
 'use client';
-import styles from './perfil.css';  
+import styles from './perfil.css';
 import Image from 'next/image';
 import Form from 'react-bootstrap/Form';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Link, Switch, Route } from 'react-router-dom';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 const Perfil = () => {
 
@@ -30,7 +31,16 @@ const Perfil = () => {
         router.push('/presentacion')
     }
 
-    
+    const [showDatosUsuario, setShowDatosUsuario] = useState(true)
+
+    const handleOnDropdownChange = (eventKey) => {
+        if (eventKey === "usuario")
+            setShowDatosPersona(true)
+        else
+            setShowDatosPersona(false)
+    }
+
+
 
     return (
         <div className="perfil">
@@ -57,7 +67,8 @@ const Perfil = () => {
                 <div className="perfilcentro">
                     <div className="titulo">
                         <h2>Mi Perfil</h2>
-                        <button>Guardar</button>
+                        <button className='Cancelar'>Cancelar</button>
+                        <button className='Guardar'>Guardar</button>
                     </div>
                     <h4>Información Personal</h4>
                     <div className='formularioarriba'>
@@ -99,30 +110,53 @@ const Perfil = () => {
                             </Form.Group>
                         </Form>
                     </div>
-                    <div className='encabezadoinferior'>
-                        <p className='cursor'>Datos de Usuario</p>
-                        <p onClick={handleUniversidadClick} className='cursor'>Universidad</p>
-                        <p onClick={handlePresentacionClick} className='cursor'>Presentación</p>
+                    <div className='boton'>
+                        <DropdownButton
+                            id="dropdown-basic-button"
+                            title="Información Personal"
+                            onSelect={e => handleOnDropdownChange(e)}>
+                            <Dropdown.Item eventKey="usuario">Datos de usuario</Dropdown.Item>
+                            <Dropdown.Item eventKey="universidad">Universidad</Dropdown.Item>
+                            <Dropdown.Item eventKey="presentacion">Presentación</Dropdown.Item>
+                        </DropdownButton>
                     </div>
-                    <div className='formularioabajo'>
+                    <div className='formulariousuario'>
                         <Form>
                             <Form.Group className="mb-3abajo">
-                                <Form.Label>Usuario</Form.Label>
-                                <Form.Control required type="text" placeholder='Nombre del usuario' className='abajo' />
+                                <Form.Label htmlFor='Usuario'>Usuario</Form.Label>
+                                <Form.Control type="text" id="Usuario" placeholder='Nombre del usuario' className='abajo' />
                             </Form.Group>
                         </Form>
                         <Form>
                             <Form.Group className="mb-3abajo">
-                                <Form.Label>Contraseña Actual</Form.Label>
-                                <Form.Control required type="password" placeholder='Ingrese su contraseña' className='abajo' />
+                                <Form.Label htmlFor='Contraseñaact'>Contraseña Actual</Form.Label>
+                                <Form.Control type="password" id="Contraseñaact" placeholder='Ingrese su contraseña' className='abajo' />
                             </Form.Group>
                             <Form.Group className="mb-3abajo">
-                                <Form.Label>Nueva Contraseña</Form.Label>
-                                <Form.Control required type="password" placeholder='Ingrese nueva contraseña' className='abajo' />
+                                <Form.Label htmlFor='NuevaContraseña'>Nueva Contraseña</Form.Label>
+                                <Form.Control type="password" id="NuevaContraseña" placeholder='Ingrese nueva contraseña' className='abajo' />
                             </Form.Group>
                             <Form.Group className="mb-3abajo">
-                                <Form.Label>Repetir Contraseña</Form.Label>
-                                <Form.Control required type="password" placeholder='Repita nueva contraseña' className='abajo' />
+                                <Form.Label htmlFor='RepetirContraseña'>Repetir Contraseña</Form.Label>
+                                <Form.Control type="password" id="RepetirContraseña" placeholder='Repita nueva contraseña' className='abajo' />
+                            </Form.Group>
+                        </Form>
+                    </div>
+                    <div className='formulariouniversidad'>
+                        <Form>
+                            <Form.Group className="mb-3abajo">
+                                <Form.Label htmlFor='Universidad'>Universidad</Form.Label>
+                                <Form.Control required type="text" id="Universidad"placeholder='Ingrese nombre de universidad' className='abajo' />
+                            </Form.Group>
+                            <Form.Group className="mb-3abajo">
+                                <Form.Label htmlFor='Cursos'>Agregar Cursos</Form.Label>
+                                <Form.Control required type="text" id="Cursos" placeholder='Ingrese nuevo curso' className='abajoderecha' />
+                            </Form.Group>
+                        </Form>
+                        <Form>
+                            <Form.Group className="mb-3abajo">
+                                <Form.Label htmlFor='Carrera'>Carrera</Form.Label>
+                                <Form.Control required type="text" id="Carrera" placeholder='Ingrese carrera' className='abajo' />
                             </Form.Group>
                         </Form>
                     </div>
