@@ -9,38 +9,29 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
 const Perfil = () => {
+    function guardarInformacion() {
+        // Obtener los valores de los inputs
+        const nombres = document.querySelector('input[placeholder="Nombres"]').value;
+        const apellidos = document.querySelector('input[placeholder="Apellidos"]').value;
+        const tipoDocumento = document.querySelector('select').value;
+        const rol = document.querySelector('select').value;
+        const numeroDocumento = document.querySelector('input[placeholder="Ingrese número de documento"]').value;
 
-    const guardarDatosPersonales = () => {
-        // Obtener todos los elementos input y select dentro del formulario
-        const inputs = document.querySelectorAll('input');
-        const selects = document.querySelectorAll('select');
-
-        // Crear un objeto para almacenar los valores
-        const datos = {};
-
-        // Iterar sobre los elementos input y guardar los valores en el objeto datos
-        inputs.forEach(input => {
-            const nombre = input.getAttribute('placeholder');
-            const valor = input.value;
-            datos[nombre] = valor;
-        });
-
-        // Iterar sobre los elementos select y guardar los valores en el objeto datos
-        selects.forEach(select => {
-            const nombre = select.previousElementSibling.textContent;
-            const valor = select.value;
-            datos[nombre] = valor;
-        });
-
-        // Mostrar los valores en la consola
-        console.log(datos);
+        // Guardar los valores en algún lugar (por ejemplo, en variables o en una base de datos)
+        // Aquí solo mostraremos los valores en la consola como ejemplo
+        console.log("Nombres:", nombres);
+        console.log("Apellidos:", apellidos);
+        console.log("Tipo de documento:", tipoDocumento);
+        console.log("Rol:", rol);
+        console.log("Número de documento:", numeroDocumento);
 
         // Mostrar una ventana emergente con el mensaje de éxito
         alert("Los datos se guardaron correctamente");
     }
 
+    // Obtener el botón "Guardar" por su clase y agregarle un evento click
     const botonGuardar = document.querySelector('.Guardar');
-    botonGuardar.addEventListener('click', guardarDatosPersonales);
+    botonGuardar.addEventListener('click', guardarInformacion);
 
     const [selectedImage, setSelectedImage] = useState(null);
 
