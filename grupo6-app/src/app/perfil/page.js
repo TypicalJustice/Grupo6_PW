@@ -9,7 +9,39 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
 const Perfil = () => {
-    
+
+    const guardarDatosPersonales = () => {
+        // Obtener todos los elementos input y select dentro del formulario
+        const inputs = document.querySelectorAll('input');
+        const selects = document.querySelectorAll('select');
+
+        // Crear un objeto para almacenar los valores
+        const datos = {};
+
+        // Iterar sobre los elementos input y guardar los valores en el objeto datos
+        inputs.forEach(input => {
+            const nombre = input.getAttribute('placeholder');
+            const valor = input.value;
+            datos[nombre] = valor;
+        });
+
+        // Iterar sobre los elementos select y guardar los valores en el objeto datos
+        selects.forEach(select => {
+            const nombre = select.previousElementSibling.textContent;
+            const valor = select.value;
+            datos[nombre] = valor;
+        });
+
+        // Mostrar los valores en la consola
+        console.log(datos);
+
+        // Mostrar una ventana emergente con el mensaje de éxito
+        alert("Los datos se guardaron correctamente");
+    }
+
+    const botonGuardar = document.querySelector('.Guardar');
+    botonGuardar.addEventListener('click', guardarDatosPersonales);
+
     const [selectedImage, setSelectedImage] = useState(null);
 
     const handleImageChange = (event) => {
@@ -77,11 +109,11 @@ const Perfil = () => {
                         <Form>
                             <Form.Group className="mb-3arriba">
                                 <Form.Label>Nombres</Form.Label>
-                                <Form.Control required type="text" placeholder='Nombres' className='arriba' />
+                                <Form.Control type="text" placeholder='Nombres' className='arriba' />
                             </Form.Group>
                             <Form.Group className="mb-3arriba">
                                 <Form.Label>Apellidos</Form.Label>
-                                <Form.Control required type="text" placeholder='Apellidos' className='arriba' />
+                                <Form.Control type="text" placeholder='Apellidos' className='arriba' />
                             </Form.Group>
                             <Form.Group className="mb-3arriba">
                                 <Form.Label>Tipo de documento</Form.Label>
@@ -108,7 +140,7 @@ const Perfil = () => {
                             </Form.Group>
                             <Form.Group className="mb-34">
                                 <Form.Label>Número</Form.Label>
-                                <Form.Control required type="text" placeholder='Ingrese número de documento' className='arriba' />
+                                <Form.Control type="text" placeholder='Ingrese número de documento' className='arriba' />
                             </Form.Group>
                         </Form>
                     </div>
@@ -151,17 +183,17 @@ const Perfil = () => {
                                 <Form>
                                     <Form.Group className="mb-3abajo">
                                         <Form.Label htmlFor='Universidad'>Universidad</Form.Label>
-                                        <Form.Control required type="text" id="Universidad" placeholder='Ingrese nombre de universidad' className='abajouniversidad' />
+                                        <Form.Control type="text" id="Universidad" placeholder='Ingrese nombre de universidad' className='abajouniversidad' />
                                     </Form.Group>
                                     <Form.Group className="mb-3abajo">
                                         <Form.Label htmlFor='Cursos'>Agregar Cursos</Form.Label>
-                                        <Form.Control required type="text" id="Cursos" placeholder='Ingrese nuevo curso' className='abajoderechauni' />
+                                        <Form.Control type="text" id="Cursos" placeholder='Ingrese nuevo curso' className='abajoderechauni' />
                                     </Form.Group>
                                 </Form>
                                 <Form>
                                     <Form.Group className="mb-3abajo">
                                         <Form.Label htmlFor='Carrera'>Carrera</Form.Label>
-                                        <Form.Control required type="text" id="Carrera" placeholder='Ingrese carrera' className='abajouniversidad' />
+                                        <Form.Control type="text" id="Carrera" placeholder='Ingrese carrera' className='abajouniversidad' />
                                     </Form.Group>
                                 </Form>
                             </div>
@@ -170,13 +202,13 @@ const Perfil = () => {
                                 <Form>
                                     <Form.Group className="mb-3abajo">
                                         <Form.Label>Titulo</Form.Label>
-                                        <Form.Control required type="text" placeholder='Ingrese título' className='abajopresentacion' />
+                                        <Form.Control type="text" placeholder='Ingrese título' className='abajopresentacion' />
                                     </Form.Group>
                                 </Form>
                                 <Form>
                                     <Form.Group className="mb-3abajo">
                                         <Form.Label>Presentación</Form.Label>
-                                        <Form.Control required type="text" placeholder='Ingrese descripción' className='abajopresentacion' />
+                                        <Form.Control type="text" placeholder='Ingrese descripción' className='abajopresentacion' />
                                     </Form.Group>
                                 </Form>
                             </div>
