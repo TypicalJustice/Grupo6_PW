@@ -9,29 +9,6 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
 const Perfil = () => {
-    function guardarInformacion() {
-        // Obtener los valores de los inputs
-        const nombres = document.querySelector('input[placeholder="Nombres"]').value;
-        const apellidos = document.querySelector('input[placeholder="Apellidos"]').value;
-        const tipoDocumento = document.querySelector('select').value;
-        const rol = document.querySelector('select').value;
-        const numeroDocumento = document.querySelector('input[placeholder="Ingrese número de documento"]').value;
-
-        // Guardar los valores en algún lugar (por ejemplo, en variables o en una base de datos)
-        // Aquí solo mostraremos los valores en la consola como ejemplo
-        console.log("Nombres:", nombres);
-        console.log("Apellidos:", apellidos);
-        console.log("Tipo de documento:", tipoDocumento);
-        console.log("Rol:", rol);
-        console.log("Número de documento:", numeroDocumento);
-
-        // Mostrar una ventana emergente con el mensaje de éxito
-        alert("Los datos se guardaron correctamente");
-    }
-
-    // Obtener el botón "Guardar" por su clase y agregarle un evento click
-    const botonGuardar = document.querySelector('.Guardar');
-    botonGuardar.addEventListener('click', guardarInformacion);
 
     const [selectedImage, setSelectedImage] = useState(null);
 
