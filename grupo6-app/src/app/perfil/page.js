@@ -1,4 +1,5 @@
-'use client';
+'use client'
+
 import styles from './perfil.css';
 import Image from 'next/image';
 import Form from 'react-bootstrap/Form';
@@ -8,7 +9,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
 const Perfil = () => {
-
+    
     const [selectedImage, setSelectedImage] = useState(null);
 
     const handleImageChange = (event) => {
@@ -21,26 +22,27 @@ const Perfil = () => {
         router.push('/principal')
     }
 
-    const router1 = useRouter();
-    const handleUniversidadClick = () => {
-        router.push('/universidad')
-    }
-
-    const router2 = useRouter();
-    const handlePresentacionClick = () => {
-        router.push('/presentacion')
-    }
-
     const [showDatosUsuario, setShowDatosUsuario] = useState(true)
+    const [showDatosUniversidad, setShowDatosUniversidad] = useState(false)
+    const [showDatosPresentacion, setShowDatosPresentacion] = useState(false)
+
 
     const handleOnDropdownChange = (eventKey) => {
-        if (eventKey === "usuario")
-            setShowDatosPersona(true)
-        else
-            setShowDatosPersona(false)
+        if (eventKey === "usuario") {
+            setShowDatosUsuario(true);
+            setShowDatosUniversidad(false);
+            setShowDatosPresentacion(false);
+
+        } else if (eventKey === "universidad") {
+            setShowDatosUsuario(false);
+            setShowDatosUniversidad(true);
+            setShowDatosPresentacion(false);
+        } else {
+            setShowDatosUsuario(false);
+            setShowDatosUniversidad(false);
+            setShowDatosPresentacion(true);
+        }
     }
-
-
 
     return (
         <div className="perfil">
@@ -90,10 +92,10 @@ const Perfil = () => {
                             </Form.Group>
                             <Form.Group className="mb-3arribafoto">
                                 {selectedImage && (
-                                    <img src={selectedImage} alt="Selected" className="selected-image" style={{ width: '265px', height: '220px' }} />
+                                    <img src={selectedImage} alt="Selected" className="selected-image" style={{ width: '250px', height: '200px' }} />
                                 )}
                                 <Form.Control type="file" onChange={handleImageChange} />
-                                <p style={{ width: '265px', color: '#8000b2', textAlign: 'center', marginTop: '5px', marginBottom: '0px', fontSize: '14px' }}>Adjuntar Foto</p>
+                                <p className='foto'>Adjuntar Foto</p>
                             </Form.Group>
                         </Form>
                         <Form>
@@ -110,7 +112,7 @@ const Perfil = () => {
                             </Form.Group>
                         </Form>
                     </div>
-                    <div className='boton'>
+                    <div>
                         <DropdownButton
                             id="dropdown-basic-button"
                             title="Información Personal"
@@ -120,46 +122,66 @@ const Perfil = () => {
                             <Dropdown.Item eventKey="presentacion">Presentación</Dropdown.Item>
                         </DropdownButton>
                     </div>
-                    <div className='formulariousuario'>
-                        <Form>
-                            <Form.Group className="mb-3abajo">
-                                <Form.Label htmlFor='Usuario'>Usuario</Form.Label>
-                                <Form.Control type="text" id="Usuario" placeholder='Nombre del usuario' className='abajo' />
-                            </Form.Group>
-                        </Form>
-                        <Form>
-                            <Form.Group className="mb-3abajo">
-                                <Form.Label htmlFor='Contraseñaact'>Contraseña Actual</Form.Label>
-                                <Form.Control type="password" id="Contraseñaact" placeholder='Ingrese su contraseña' className='abajo' />
-                            </Form.Group>
-                            <Form.Group className="mb-3abajo">
-                                <Form.Label htmlFor='NuevaContraseña'>Nueva Contraseña</Form.Label>
-                                <Form.Control type="password" id="NuevaContraseña" placeholder='Ingrese nueva contraseña' className='abajo' />
-                            </Form.Group>
-                            <Form.Group className="mb-3abajo">
-                                <Form.Label htmlFor='RepetirContraseña'>Repetir Contraseña</Form.Label>
-                                <Form.Control type="password" id="RepetirContraseña" placeholder='Repita nueva contraseña' className='abajo' />
-                            </Form.Group>
-                        </Form>
-                    </div>
-                    <div className='formulariouniversidad'>
-                        <Form>
-                            <Form.Group className="mb-3abajo">
-                                <Form.Label htmlFor='Universidad'>Universidad</Form.Label>
-                                <Form.Control required type="text" id="Universidad"placeholder='Ingrese nombre de universidad' className='abajo' />
-                            </Form.Group>
-                            <Form.Group className="mb-3abajo">
-                                <Form.Label htmlFor='Cursos'>Agregar Cursos</Form.Label>
-                                <Form.Control required type="text" id="Cursos" placeholder='Ingrese nuevo curso' className='abajoderecha' />
-                            </Form.Group>
-                        </Form>
-                        <Form>
-                            <Form.Group className="mb-3abajo">
-                                <Form.Label htmlFor='Carrera'>Carrera</Form.Label>
-                                <Form.Control required type="text" id="Carrera" placeholder='Ingrese carrera' className='abajo' />
-                            </Form.Group>
-                        </Form>
-                    </div>
+                    {
+                        showDatosUsuario ? (
+                            <div className='formulariousuario'>
+                                <Form>
+                                    <Form.Group className="mb-3abajo">
+                                        <Form.Label htmlFor='Usuario'>Usuario</Form.Label>
+                                        <Form.Control type="text" id="Usuario" placeholder='Nombre del usuario' className='abajousuario' />
+                                    </Form.Group>
+                                </Form>
+                                <Form>
+                                    <Form.Group className="mb-3abajo">
+                                        <Form.Label htmlFor='Contraseñaact'>Contraseña Actual</Form.Label>
+                                        <Form.Control type="password" id="Contraseñaact" placeholder='Ingrese su contraseña' className='abajousuario' />
+                                    </Form.Group>
+                                    <Form.Group className="mb-3abajo">
+                                        <Form.Label htmlFor='NuevaContraseña'>Nueva Contraseña</Form.Label>
+                                        <Form.Control type="password" id="NuevaContraseña" placeholder='Ingrese nueva contraseña' className='abajousuario' />
+                                    </Form.Group>
+                                    <Form.Group className="mb-3abajo">
+                                        <Form.Label htmlFor='RepetirContraseña'>Repetir Contraseña</Form.Label>
+                                        <Form.Control type="password" id="RepetirContraseña" placeholder='Repita nueva contraseña' className='abajousuario' />
+                                    </Form.Group>
+                                </Form>
+                            </div>
+                        ) : showDatosUniversidad ? (
+                            <div className='formulariouniversidad'>
+                                <Form>
+                                    <Form.Group className="mb-3abajo">
+                                        <Form.Label htmlFor='Universidad'>Universidad</Form.Label>
+                                        <Form.Control required type="text" id="Universidad" placeholder='Ingrese nombre de universidad' className='abajouniversidad' />
+                                    </Form.Group>
+                                    <Form.Group className="mb-3abajo">
+                                        <Form.Label htmlFor='Cursos'>Agregar Cursos</Form.Label>
+                                        <Form.Control required type="text" id="Cursos" placeholder='Ingrese nuevo curso' className='abajoderechauni' />
+                                    </Form.Group>
+                                </Form>
+                                <Form>
+                                    <Form.Group className="mb-3abajo">
+                                        <Form.Label htmlFor='Carrera'>Carrera</Form.Label>
+                                        <Form.Control required type="text" id="Carrera" placeholder='Ingrese carrera' className='abajouniversidad' />
+                                    </Form.Group>
+                                </Form>
+                            </div>
+                        ) : (
+                            <div className='formulariopresentacion'>
+                                <Form>
+                                    <Form.Group className="mb-3abajo">
+                                        <Form.Label>Titulo</Form.Label>
+                                        <Form.Control required type="text" placeholder='Ingrese título' className='abajopresentacion' />
+                                    </Form.Group>
+                                </Form>
+                                <Form>
+                                    <Form.Group className="mb-3abajo">
+                                        <Form.Label>Presentación</Form.Label>
+                                        <Form.Control required type="text" placeholder='Ingrese descripción' className='abajopresentacion' />
+                                    </Form.Group>
+                                </Form>
+                            </div>
+                        )
+                    }
                 </div>
             </main>
         </div>
