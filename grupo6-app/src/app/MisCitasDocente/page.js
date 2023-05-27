@@ -8,9 +8,9 @@ const CitasDocente = () => {
   return (
     <div>
       <header>
-        <img className="icon-header" src="./public/menu.png" alt="" />
+        <img className="icon-header" src='/menu.png' alt="" />
         <h1>Atención de Citas</h1>
-        <img className="icon-header" id="icon-user" src="./public/usuario.png" alt="" />
+        <img className="icon-header" id="icon-user" src='/usuario.png' alt="" />
 
       </header>
 
@@ -27,7 +27,7 @@ const CitasDocente = () => {
               <a href="">Horarios</a>
             </li>
             <li>
-              <a href="/citasDocente.jsx">Citas</a>
+              <a href="/page.js">Citas</a>
             </li>
             <li>
               <a href="">Calificaciones</a>
@@ -42,7 +42,7 @@ const CitasDocente = () => {
       <main>
         <div>
           <button className="programar-cita">
-            <a href="./busquedaCita/ReservaCita.jsx" style={{ color: "white", textDecoration: "none" }}>
+            <a href="./busquedaCita/page.js" style={{ color: "white", textDecoration: "none" }}>
               Programar una cita
             </a>
           </button>
@@ -66,7 +66,7 @@ const CitasDocente = () => {
             <p className="docente-nombres">Estudiante de Ing. de Sistemas</p>
           </div>
           <div className="docente-foto-container">
-            <img className="foto-docente" src="./public/alumno.jpg" alt="" />
+            <img className="foto-docente" src='/alumno.jpg' alt="" />
           </div>
           <div className="cita-info">
             <p className="cita-fecha">Lunes, 22 de mayo de 2023 - 08:00 am</p>
@@ -91,7 +91,7 @@ const CitasDocente = () => {
             <p className="docente-nombres">Estudiante de Ing. Industrial</p>
           </div>
           <div className="docente-foto-container">
-            <img className="docente-foto" src="./public/alumno2.png" alt="" />
+            <img className="foto-docente" src='/alumno2.png' alt="" />
           </div>
           <div className="cita-info">
             <p className="cita-fecha">Jueves, 25 de mayo de 2023 - 04:00pm</p>
