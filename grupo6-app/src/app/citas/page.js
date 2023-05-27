@@ -46,7 +46,7 @@ const Citas = () => {
 
   return (
     <div>
-      {userType === 'student' ? perfilEstudiante() : perfilDocente()}
+      {userType === 'estudiante' ? perfilEstudiante() : perfilDocente()}
     </div>
   );
 };
