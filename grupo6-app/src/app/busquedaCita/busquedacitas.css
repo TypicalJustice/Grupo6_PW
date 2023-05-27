@@ -1,0 +1,90 @@
+.Titulo{
+    background-color: white;
+    height: 60px;   
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    
+}   
+
+li{
+    margin-top: 22px;
+    list-style:none;
+    
+}
+.Profesor{
+    border: 1px outset;
+}
+
+#Columna1{
+    background-color: #f2f2f2;
+}
+
+a{
+    color: black;
+}
+
+.nav-item{
+    color: #6757a5;
+    
+}
+
+
+
+.Titulo{
+    background-color: #f4ecf4 ;
+}
+
+
+
+
+.resultado{
+    
+    margin-top: 50px;
+    border-left: 10px solid mediumseagreen;
+    border-collapse: separate;
+    margin-left: 30px;
+    padding-left: 10px;
+    
+}
+
+.BtnReserva{
+
+    background-color: #f4ecf4;
+    align-self: center;
+    margin-top: 35px;
+    margin-left: 30px;
+    border-radius: 5px;
+    max-height: 30px;
+    
+}
+.BtnReserva:hover {
+    background-color:aqua;
+    color:white;
+}
+.btnBuscar:hover {
+    background-color:red;
+    color: white;
+  }
+
+#resultado-busqueda{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+#fechabusq{
+    max-width: 200px;
+    border-color: black;
+    max-height: 50px;
+}
+
+
+#busqueda{
+    border-radius: 5px;
+    max-height: 50px;
+
+}
+
+.ocultar{
+    display: none;
+}
