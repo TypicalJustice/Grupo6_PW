@@ -1,13 +1,16 @@
 'use client'
-import Image from 'next/image'
-import styles from './page.module.css'
-import React from 'react'
-
+import { useRouter } from 'next/navigation'
+import Button from '../components/Button/Button.jsx'
 
 export default function Home() {
+  const router = useRouter()
+  const empezar = () => {
+      router.push('/LoginAlumno')
+}
   return (
-    <main>
-
+    <main className='empezar' >
+      <Button value="Empezar" onClick={empezar}></Button>
     </main>
   )
 }
+

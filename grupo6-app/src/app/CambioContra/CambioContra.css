@@ -1,0 +1,33 @@
+.container-pantalla{
+    display:flex;
+    flex-direction: column;
+}
+.container-contraseña-nueva{
+    margin: 5%;
+    margin-bottom:0;
+}
+
+.container-contraseña{
+    margin: 5%;
+    margin-bottom: 0;
+}
+.contenedor-button-contraseña{
+    display:flex;
+    flex-direction: row;
+    padding-left: 30%;
+
+}
+.container-principal{
+    margin-top: 10%;
+    border-style: Outset;
+    margin-right: 30%;
+    margin-left: 30%;
+    background-color: ghostwhite;
+}
+.container-confirmar-contraseña-nueva{
+    margin: 5%;
+    margin-bottom: 0;
+}
+.container-registro{
+    padding-right: 5%;
+}

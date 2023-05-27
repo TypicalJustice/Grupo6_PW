@@ -1,0 +1,32 @@
+.container-login{
+    display:flex;
+    flex-direction: column;
+}
+.container-usuario{
+    margin: 5%;
+    margin-bottom:0;
+}
+
+.container-contraseña{
+    margin: 5%;
+    margin-bottom: 0;
+}
+.contenedor-butt{
+    display:flex;
+    flex-direction: row;
+    padding-left: 30%;
+
+}
+.container-principal{
+    border-style: Outset;
+    margin: 15%;
+    background-color: ghostwhite;
+}
+.container-links{
+    display:flex;
+    flex-direction: row;
+    padding-left: 30%;
+}
+.container-registro{
+    padding-right: 5%;
+}

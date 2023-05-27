@@ -1,0 +1,54 @@
+.container-usuario{
+    margin: 5%;
+    margin-bottom:0;
+}
+
+.container-contraseña{
+    margin: 5%;
+    margin-bottom: 0;
+}
+.container-correo{
+    margin: 5%;
+    margin-bottom: 0;
+}
+.container-rep-contraseña{
+    margin: 5%;
+    margin-bottom: 0;
+}
+.container-nombres{
+    margin: 5%;
+    margin-bottom: 0;
+}
+.container-apellidos{
+    margin: 5%;
+    margin-bottom: 0;
+}
+.container-tipo{
+    margin: 5%;
+    margin-bottom: 0;
+}
+.container-numerodoc{
+    margin: 5%;
+    margin-bottom: 0;
+}
+.contenedor-button{
+    display:flex;
+    flex-direction: row;
+    padding-left: 40%;
+
+}
+.container-principal{
+    background-color: ghostwhite;
+    border-style: Outset;
+    margin: 10%;
+}
+.container-rol{
+    margin: 5%;
+    margin-bottom: 0;
+}
+.subtitle{
+    padding-top: 5%;
+    text-align: center;
+    align-content: center;
+}
+
