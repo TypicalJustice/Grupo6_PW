@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 
 const Citas = () => {
-  // Datos genéricos de próximas citas
+  // Datos genéricos de próximas citas visible
   const proximasCitas = [
-    { id: 1, date: '2023-06-28', time: '10:00 AM', estudiante: 'Cristiano Cuccitini' },
-    { id: 2, date: '2023-06-30', time: '2:00 PM', estudiante: 'Lionel Dos Santos' },
-    { id: 3, date: '2023-07-01', time: '11:30 AM', estudiante: 'Kevin de Bruyne' },
+    { id: 1, date: '2023-06-18', time: '8:00 AM', estudiante: 'Alfonso Carrión' },
+    { id: 2, date: '2023-06-18', time: '8:00 AM', estudiante: 'Alfonso Carrión' },
   ];
 
   const citasPasadas = [
-    { id: 4, date: '2023-05-15', time: '3:00 PM', estudiante: 'Neymar Silva' },
-    { id: 5, date: '2023-05-20', time: '9:30 AM', estudiante: 'Andrés Iniesta' },
+    { id: 4, date: '2023-05-15', time: '3:00 PM', profesor: 'Juan López' },
+    { id: 5, date: '2023-05-20', time: '9:30 AM', profesor: 'Adriana Sánchez' },
   ];
 
   const userType = 'estudiante'; // El usuario por defecto es estudiante, se debe cambiar a 'docente' para el perfil del docente.
