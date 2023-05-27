@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Citas = () => {
   // Datos genéricos de próximas citas
@@ -54,10 +54,10 @@ const Citas = () => {
   };
 
   const detalleCita = (cita) => {
-    const calificarAsesoria = () => {
-      // Lógica para calificar la asesoría
-      // ...
-      alert('¡Gracias por calificar la asesoría!');
+    const [calificacion, setCalificacion] = useState(null);
+
+    const calificarAsesoria = () => { //Esto es para backend 
+      alert(`Has calificado la asesoría con ${calificacion} estrellas!`);
     };
 
     return (
@@ -66,16 +66,27 @@ const Citas = () => {
         <p>
           <strong>Fecha:</strong> {cita.date} | <strong>Hora:</strong> {cita.time} | <strong>Estudiante:</strong> {cita.estudiante}
         </p>
-        {userType === 'estudiante' && (
-          <button onClick={calificarAsesoria}>Calificar asesoría</button>
+        {userType === 'estudiante' && !calificacion && (
+          <div>
+            <p>Califica la asesoría:</p>
+            <div>
+              <button onClick={() => setCalificacion(1)}>1 estrella</button>
+              <button onClick={() => setCalificacion(2)}>2 estrellas</button>
+              <button onClick={() => setCalificacion(3)}>3 estrellas</button>
+              <button onClick={() => setCalificacion(4)}>4 estrellas</button>
+              <button onClick={() => setCalificacion(5)}>5 estrellas</button>
+            </div>
+            <button onClick={calificarAsesoria}>Calificar asesoría</button>
+          </div>
         )}
+        {calificacion && <p>Has calificado la asesoría con {calificacion} estrellas</p>}
       </div>
     );
   };
 
   // Obtener el parámetro de la URL para el detalle de la cita
-  const urlParams = new URLSearchParams(window.location.search);
-  const citaId = urlParams.get('citaId');
+  const urlParametros = new URLSearchParams(window.location.search);
+  const citaId = urlParametros.get('citaId');
   const citaSeleccionada = proximasCitas.find((cita) => cita.id.toString() === citaId);
 
   return (
