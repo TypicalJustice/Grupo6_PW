@@ -1,4 +1,4 @@
-mport { DataTypes } from "sequelize";
+import { DataTypes } from "sequelize";
 import { sequelize } from "../database/database.js";
 
 import { Profesor } from "./Profesor.js";
